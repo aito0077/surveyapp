@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<div metal:use-macro="/admin/wrapper/process_wrapper.html/process_wrapper">
+    <div metal:fill-slot="main_process_view">
+        <div class="page-header">
+            <strong><span class="text-info" tal:content="result/process/summary">Summary</span></strong> (<span tal:content="result/process/code">Code</span>) 
+        </div>
+        <div>
+            <div class="controls controls-row info" >
+                <label class="span2" for="process_type">Type:</label>
+                <label class="span2 text-info"><strong tal:content="result/process/type">type</strong></label>
+            </div>
+            <!--
+            <div class="controls controls-row">
+                <label class="span2">Description:</label>
+                <label class="span2 text-info"><strong tal:content="result/process/description">description</strong></label>
+            </div>
+            -->
+            <div class="controls controls-row info">
+                <label class="span2">Start Date:</label>
+                <label class="span2 text-info"><strong tal:content="result/process/date_start">Start Date</strong></label>
+            </div>
+            <div class="controls controls-row">
+                <label class="span2">Finish Date:</label>
+                <label class="span2 text-info"><strong tal:content="result/process/date_finish">Date End</strong></label>
+            </div>
+         </div>
+        <div>
+            <table class="table table-striped table-hover">
+                <caption><h2>Ranking</h2></caption>
+                <a class="btn btn-medium btn-primary offset9" href="/admin/process/add">New Process</a>
+                <thead>
+                    <tr>
+                        <th>Position</th>
+                        <th>Id</th>
+                        <th>Participant</th>
+                        <th>Answered</th>
+                        <th>Corrects</th>
+                        <th>Time (min:sec)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr tal:repeat="item ranking">
+                        <td>#${item/order}</td>
+                        <th>${item/id}</th>
+                        <td><a href="/admin/process/view_participant_performance/${result/process/code}/${item/participant_id}">${item/describe}</a> </td>
+                        <td tal:content="item/answered_amount"></td>
+                        <td tal:content="item/answered_amount_correct"></td>
+                        <td >${item/time/minutes}:${item/time/seconds}</td>
+                    </tr>
+               </tbody>
+            </table>
+        </div>
+        <div id="participant_statistic">
+
+        </div>
+
+    </div>
+
+
+</div>

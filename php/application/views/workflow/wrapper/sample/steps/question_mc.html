@@ -1,0 +1,20 @@
+    <tal:block metal:define-macro="activity">
+
+        <div id="contenedor_question_game">
+            <span class="question" tal:content="activity/description">{{DESCRIPCION}}</span>
+            <tal:block tal:condition="php:isset(activity['question'])">
+                <span class="question_bold">&nbsp;&nbsp;&nbsp;${activity/question}</span>
+            </tal:block>
+        </div>
+        <div id="contenedor_answers_game"> 
+            <tal:block tal:repeat="answer activity/answers">
+            <label>
+                <input type="radio" class="radio" tal:attributes="name activity/code; id answer/code; value answer/value"/>
+                <span class="answers" tal:content="answer/text">{{RESPUESTA_TEXTO}}</span>
+            </label>
+            <br /><br />
+            </tal:block>
+        </div>
+
+    </tal:block>
+

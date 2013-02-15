@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html metal:use-macro="/admin/wrapper/main.html/layout">
+    <div id="main_edit" metal:fill-slot="main_content">
+        <table class="table table-striped table-hover">
+            <caption><h2>Candidates Batches</h2></caption>
+            <a class="btn btn-medium btn-primary offset9" href="/admin/participants/import">Import Batch</a>
+            <thead>
+                <tr>
+                    <th>Code</th>
+                    <th>Description</th>
+                    <th>Count</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr tal:repeat="batch batches">
+                    <td tal:content="batch/_id">COD1</td>
+                    <td tal:content="batch/description">Loteo de Compania</td>
+                    <td tal:content="batch/count">34</td>
+                    <td><a class="btn btn-small btn-primary" href="/admin/participants/batch_show_results/${batch/_id}">View</a></td>
+                    <td><a class="btn btn-small btn-primary" href="/admin/participants/batch_remove/${batch/_id}">Remove</a></td>
+                </tr>
+           </tbody>
+        </table>
+
+    </div> <!-- /container -->
+
+</html>

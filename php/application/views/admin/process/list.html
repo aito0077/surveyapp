@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html metal:use-macro="/admin/wrapper/main.html/layout">
+    <div id="main_edit" metal:fill-slot="main_content">
+        <table class="table table-striped table-hover">
+            <caption><h2>Processes</h2></caption>
+            <a class="btn btn-medium btn-primary offset9" href="/admin/process/add">New Process</a>
+            <thead>
+                <tr>
+                    <th>Code</th>
+                    <th>Summary</th>
+                    <th>State</th>
+                    <th><i class="icon-eye-open"></i></th>
+                    <th><i class="icon-edit"></i></th>
+                    <th><i class="icon-trash"></i></th>
+                </tr>
+            </thead>
+            <tbody>
+                <!--
+                <tr tal:repeat="process processes"  tal:attributes="class php: process['state'] == 'INACTIVE' ? 'error' : NULL">
+                -->
+                <tr tal:repeat="process processes">
+                    <td tal:content="process/code">COD1</td>
+                    <td tal:content="process/summary">Sumario de ejemplo para concurso</td>
+                    <td tal:content="process/state">ACTIVO</td>
+                    <td><a class="span1 btn btn-small btn-success" href="/admin/process/view/${process/code}">View</a></td>
+                    <td><a class="span1 btn btn-small btn-primary" href="/admin/process/edit/${process/code}">Edit</a></td>
+                    <td><a class="span1 btn btn-small btn-danger" href="/admin/process/remove_process/${process/code}">Remove</a></td>
+                </tr>
+           </tbody>
+        </table>
+
+    </div> <!-- /container -->
+
+</html>

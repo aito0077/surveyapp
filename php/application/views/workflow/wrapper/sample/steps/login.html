@@ -1,0 +1,17 @@
+    <tal:block metal:define-macro="activity">
+
+        <input type="hidden" name="login" value="DO"/>
+        <div id="carga_numero">
+            <table>
+                <tr tal:repeat="field fields">
+                    <td>
+                        <label for="${field/name}">${field/name}</label>
+                    </td>
+                    <td>
+                        <input name="${field/name}" id="${field/name}" type="text" size="37" autocomplete="off"/>
+                    </td>
+                </tr>
+             </table>
+        </div>
+        
+    </tal:block>

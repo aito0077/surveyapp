@@ -1,0 +1,87 @@
+    <div metal:define-macro="activity_edit" class="span11">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">Activity Edition</h3>
+        </div>
+        <div class="modal-body">
+
+           <div class="controls controls-row">
+                <label class="span1" for="activity_super_type">Class</label>
+                <div class="btn-group span4 input-large" data-toggle="buttons-radio" autocomplete="off">
+                    <button type="button" id="activity_super_type_question" class="btn btn-medium" autocomplete="off">Question</button>
+                    <button type="button" id="activity_super_type_content" class="btn btn-medium" autocomplete="off">Content</button>
+                    <button type="button" id="activity_super_type_specials" class="btn btn-medium" autocomplete="off">Others</button>
+                </div>
+            </div>
+            <div id="body_step" style="display:none">
+                <div id="row_type_activity" class="controls controls-row" style="display:none">
+                    <label class="span1" for="activity_content_type">Type</label>
+                    <select class="span4 input-large" id="activity_super_type_type"> </select>
+                </div>
+                <br/>
+                <br/>
+                <div class="controls controls-row">
+                    <label class="span1" for="activity_sumario">Summary</label>
+                    <textarea id="activity_summary" class="span5 input-xxlarge" rows="3" autocomplete="off"></textarea>
+                </div>
+                <div id="activity_edit_type_question" class="row" style="display:none">
+                    <br/>
+                    <div class="controls controls-row">
+                        <label class="span1" for="activity_question">Question</label>
+                        <textarea id="activity_question" class="span5 input-xxlarge" rows="2" autocomplete="off"></textarea>
+                    </div>
+ 
+                    <br/>
+                    <div id="row_activity_edition_question"> 
+                         <div class=" row controls controls-row">
+                            <span class="span1" style="margin-left: 20px;float: none;">Answer</span>
+
+                            <input type="text" id="activity_answer_text" class="offset1 input-xlarge"  placeholder="Text" autocomplete="off"/>
+                            <input type="text" id="activity_answer_value" class="input-mini"  placeholder="Value" autocomplete="off"/>
+                            <span class="offset1" >Correct?</span>
+                            <input type="checkbox" class="checkbox" id="activity_answer_right" autocomplete="off"/>
+
+                         </div>
+                         <div class="controls controls-row">
+                            <button id="button_activity_question_add" class="offset5 btn btn-primary">Add</button>
+                            <button id="button_activity_question_save" class="offset5 btn btn-primary" style="display:none">Save</button>
+                            <button id="button_activity_question_cancel" class="btn" style="display:none">Cancel</button>
+                        </div>
+                        <div id="activity_edit_answers">
+                        </div>
+                        
+                    </div>
+                </div>
+                 <br/>
+                <div id="activity_edit_type_content"  style="display:none">
+                     <br/>
+                    <div class="controls controls-row">
+                        <textarea id="activity_content_text" class="input-xxlarge" placeholder="Content..." autocomplete="off"></textarea>
+                    </div>
+                </div>
+                <div id="activity_edit_type_specials" style="display:none">
+                    <div id="specials_login" style="display:none">
+
+                    </div>
+                    <div id="specials_video" class="controls controls-row" style="display:none">
+                        <label class="span1" for="activity_specials_video_resources">Video</label>
+                        <select class="span4 input-large" id="activity_specials_video_resources"> </select>
+                    </div>
+                    <div id="specials_flash" class="controls controls-row" style="display:none">
+                        <label class="span1" for="activity_specials_flash_resources">Flash</label>
+                        <select class="span4 input-large" id="activity_specials_flash_resources"> </select>
+                    </div>
+
+               </div>
+ 
+           </div>
+
+        </div>
+        <div class="modal-footer">
+            <button id="button_save_activity" class="btn btn-primary">Save</button>
+            <button id="button_cancel_activity" class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+        </div>
+    </div>
+ 
+
+

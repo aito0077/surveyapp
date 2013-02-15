@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>${process/summary}</title>
+        <link href="/static/resources/projects/${process/code}/style.css" rel="stylesheet" type="text/css" />
+        <script src="/static/js/jquery.js"></script>
+        <script src="/static/resources/projects/${process/code}/js/images_treatment.js"></script>
+    </head>
+
+    <body>
+
+        <div id="contenedor_gral">
+            <form id="form_login" name='form1' method="POST" action="/p/${process/code}/${activity/code}"> 
+                <input type="hidden" name="login" value="DO"/>
+                <input type="hidden" name="process_code" value="${process/code}"/>
+                <div id="contenedor_login">
+                    <div id="participa_login">Participate</div>
+                    <div id="ingresa_login">Login</div>
+                    <div id="formulario_login">
+                        <tal:block tal:repeat="field fields">
+                            <label for="textfield"></label>
+                            <input name="${field/name}" id="${field/name}" class="text_login" type="text" autocomplete="off"/>
+                        </tal:block>
+                    </div>
+                    <div id="acepto_login">I agree the bases and conditions</div>
+                    <div id="check_login">
+                        <input name="login_base" type="checkbox" class="checkbox" />
+                    </div>
+                    <div id="bases_loging">
+                        <a href="/workflow/process_viewer/bases/${process/code}" class="btn_off_bases">Bases and terms</a>
+                    </div>
+                    <div id="btn_ingresar_login">
+                        <span onclick="$('#form_login').submit()" class="btn_off_ing">ingresar</span>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </body>
+</html>

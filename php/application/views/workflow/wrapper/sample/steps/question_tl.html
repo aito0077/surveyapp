@@ -1,0 +1,15 @@
+    <tal:block metal:define-macro="activity">
+
+        <div id="contenedor_question_game">
+            <span class="question" tal:content="activity/description">{{DESCRIPCION}}</span>
+            <span class="question_bold">&nbsp;&nbsp;&nbsp;${activity/question}</span>
+        </div>
+        <div id="contenedor_answers_game"> 
+    		<label>
+      			<textarea tal:attributes="name activity/code; id activity/code" cols="80" rows="5"></textarea>
+    		</label>
+        </div>
+
+    </tal:block>
+
+
